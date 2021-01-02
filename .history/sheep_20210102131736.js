@@ -43,7 +43,7 @@ export class Sheep {
 
     ctx.save();
     ctx.translate(this.x, this.y);
-    ctx.rotate(closest.rotation);
+    ctx.fillStyle = "#000000";
     ctx.drawImage(
       this.img,
       this.imgWidth * this.curFrame,
@@ -104,18 +104,10 @@ export class Sheep {
     return (1 - t) * (1 - t) * p0 + 2 * (1 - t) * t * p1 + t * t * p2;
   }
 
-  getPointOnQuad(x1, y1, x2, y2, x3, y3, t) {
-    const tx = this.quadTangent(x1, x2, x3, t);
-    const ty = this.quadTangent(y1, y2, y3, t);
-    const rotation = -Math.atan2(tx, ty) + (90 * Math.PI) / 180;
+  getPintOnQuad(x1, y1, x2, y2, x3, y3, t) {
     return {
       x: this.getQuadValue(x1, x2, x3, t),
       y: this.getQuadValue(y1, y2, y3, t),
-      rotation: rotation,
     };
-  }
-
-  quadTangent(a, b, c, t) {
-    return 2 * (1 - t) * (b - a) + 2 * (c - b) * t;
   }
 }

@@ -43,7 +43,7 @@ export class Sheep {
 
     ctx.save();
     ctx.translate(this.x, this.y);
-    ctx.rotate(closest.rotation);
+    ctx.fillStyle = "#000000";
     ctx.drawImage(
       this.img,
       this.imgWidth * this.curFrame,
