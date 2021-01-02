@@ -33,28 +33,10 @@ export class Sun {
     }
     ctx.fillStyle = "#ffb200";
     ctx.beginPath();
-    let pos = this.pos[0];
-    ctx.moveTo(pos.x + this.x, pos.y + this.y);
-    for (let i = 1; i < this.total; i++) {
-      const pos = this.pos[i];
-      ctx.lineTo(pos.x + this.x, pos.y + this.y);
-    }
+    ctx.arc(this.x, this.y, this.radius, 0, 2 * Math.PI);
     ctx.fill();
   }
 
-  updatePoints() {
-    for (let i = 1; i < this.total; i++) {
-      const pos = this.originPos[i];
-      this.pos[i] = {
-        x: pos.x + this.ranInt(5),
-        y: pos.y + this.ranInt(5),
-      };
-    }
-  }
-
-  ranInt(max) {
-    return Math.random() * max;
-  }
   getCirclePoint(radius, t) {
     const theta = Math.PI * 2 * t;
 

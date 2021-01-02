@@ -36,8 +36,6 @@ class App {
 
     this.ctx.scale(this.pixelRatio, this.pixelRatio);
 
-    this.sun.resize(this.stageWidth, this.stageHeight);
-
     for (let i = 0; i < this.hills.length; i++) {
       this.hills[i].resize(this.stageWidth, this.stageHeight);
     }
@@ -47,8 +45,6 @@ class App {
     window.requestAnimationFrame(this.animate.bind(this));
 
     this.ctx.clearRect(0, 0, this.stageWidth, this.stageHeight);
-
-    this.sun.draw(this.ctx, t);
 
     let dots;
     for (let i = 0; i < this.hills.length; i++) {
