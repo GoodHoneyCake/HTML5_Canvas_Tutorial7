@@ -24,21 +24,12 @@ class App {
     this.canvas.height = this.stageHeight * this.pixelRatio;
 
     this.ctx.scale(this.pixelRatio, this.pixelRatio);
-
-    for (let i = 0; i < this.hills.length; i++) {
-      this.hills[i].resize(this.stageWidth, this.stageHeight);
-    }
   }
 
   animate(t) {
     window.requestAnimationFrame(this.animate.bind(this));
 
     this.ctx.clearRect(0, 0, this.stageWidth, this.stageHeight);
-
-    let dots;
-    for (let i = 0; i < this.hills.length; i++) {
-      dots = this.hills[i].draw(this.ctx);
-    }
   }
 }
 
