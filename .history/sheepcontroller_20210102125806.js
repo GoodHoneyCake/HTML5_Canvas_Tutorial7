@@ -2,7 +2,7 @@ import { Sheep } from "./sheep.js";
 
 export class SheepController {
   constructor() {
-    this.img = new Image();
+    // this.img = new Image();÷
     this.img.onload = () => {
       this.loaded();
     };
@@ -40,7 +40,7 @@ export class SheepController {
         if (item.x < -item.width) {
           this.items.splice(i, 1);
         } else {
-          item.draw(ctx, t, dots);
+          item.draw(ctx.t, dots);
         }
       }
     }

@@ -40,7 +40,7 @@ export class SheepController {
         if (item.x < -item.width) {
           this.items.splice(i, 1);
         } else {
-          item.draw(ctx, t, dots);
+          item.draw(this.ctx, t, dots);
         }
       }
     }

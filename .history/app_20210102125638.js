@@ -1,5 +1,4 @@
 import { Hill } from "./hill.js";
-
 import { SheepController } from "./sheepcontroller.js";
 
 class App {

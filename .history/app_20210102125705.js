@@ -1,5 +1,5 @@
 import { Hill } from "./hill.js";
-
+import { Sheep } from "./sheep.js";
 import { SheepController } from "./sheepcontroller.js";
 
 class App {
@@ -15,6 +15,8 @@ class App {
     ];
 
     this.sheepController = new SheepController();
+
+    this.sheep = new Sheep();
 
     this.pixelRatio = window.devicePixelRatio > 1 ? 2 : 1;
 
