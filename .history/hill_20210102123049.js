@@ -27,16 +27,6 @@ export class Hill {
 
     let dots = [];
     cur.x += this.speed;
-
-    if (cur.x > -this.gap) {
-      this.points.unshift({
-        x: -this.gap * 2,
-        y: this.getY(),
-      });
-    } else if (cur.x > this.stageWidth + this.gap) {
-      this.points.splice(-1);
-    }
-
     ctx.moveTo(cur.x, cur.y);
 
     let prevCx = cur.x;
